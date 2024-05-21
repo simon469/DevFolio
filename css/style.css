@@ -1,0 +1,753 @@
+/* Globle Variable */
+:root {
+    --primaryColor: #0d6efd;
+    --whiteColor: #FFF;
+    --offcanvasBackdropColor: #acacac;
+    --fontColor: #1e1e1e;
+    --bgBody: f5f5f5;
+    --bodyColor: #4e4e4e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f5f5f5;
+    color: #4e4e4e;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--fontColor);
+}
+
+p {
+
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+:focus-visible {
+    outline: 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    -webkit-transition: color 0.5s ease-in-out;
+    -o-transition: color 0.5s ease-in-out;
+    transition: color 0.5s ease-in-out;
+}
+
+.sec-pt-4 {
+    padding-top: 4rem;
+}
+
+picture,
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button[type=submit] {
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+button[type=submit]:hover {
+    background: var(--primaryColor);
+    -webkit-box-shadow: 0 0 0 4px #cde1f8;
+    box-shadow: 0 0 0 4px #cde1f8;
+    border-color: transparent;
+}
+
+.line {
+    width: 70px;
+    height: 3px;
+    background-color: var(--primaryColor);
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 1.5625rem;
+}
+
+.section-title h3 {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+/* End Globle Variable */
+
+/* Start nav */
+.navbar {
+    background-color: rgb(4, 4, 4);
+}
+
+.navbar-expand-lg .navbar-nav {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+    color: var(--whiteColor);
+}
+
+.offcanvas .navbar-nav .nav-link.active,
+.offcanvas .navbar-nav .nav-link.show {
+    color: var(--fontColor);
+}
+
+.navbar-brand {
+    color: var(--whiteColor);
+
+}
+
+.navbar-toggler {
+    border: 0;
+    background: none;
+}
+
+.navbar-toggler:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+
+.dropdown-item,
+.sub-menu-item {
+    text-transform: capitalize;
+}
+
+.deep-dropdown {
+    position: relative;
+}
+
+.sub-menu li {
+    padding: 5px 15px;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.deep-dropdown:hover .sub-menu {
+    display: block !important;
+}
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+    top: 102%;
+}
+
+.large-screen .deep-dropdown .sub-menu {
+    position: absolute;
+    left: -159px;
+    top: 0px;
+}
+
+.nav-link {
+    color: var(--whiteColor);
+}
+
+.navbar-brand {
+    font-size: 28px;
+}
+
+.navbar-brand:focus,
+.navbar-brand:hover,
+.nav-link:focus,
+.navbar .nav-link:hover {
+    color: var(--whiteColor);
+}
+
+.deep-dropdown .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+    background-color: transparent;
+    color: var(--fontColor);
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 15px 0;
+}
+
+.navbar-nav .nav-link::after,
+.nav-tabs .nav-link.active::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--whiteColor);
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    -webkit-transition: .5s width;
+    -o-transition: .5s width;
+    transition: .5s width;
+}
+
+.dropdown-menu a:hover {
+    color: var(--primaryColor);
+}
+
+.nav-tabs .nav-link.active {
+    position: relative;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.nav-tabs .nav-link.active::after,
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-tabs {
+    border-bottom: 0;
+}
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+}
+
+.nav-tabs .nav-link {
+    margin-bottom: 0;
+    border: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.offcanvas {
+    background-color: var(--whiteColor);
+    color: var(--fontColor);
+    display: none;
+    /* width: 97% !important; */
+    left: 10px !important;
+    height: 88%;
+    top: 10% !important;
+}
+
+.offcanvas-header {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end;
+}
+
+.dropdown-item:focus,
+.dropdown-item:hover {
+    background-color: transparent;
+}
+
+.dropdown-menu {
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 5px 5px 11px 0px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-toggle::after {
+    border: 0;
+}
+
+:root:has(.nav-link:focus) .offcanvas {
+    display: none;
+}
+
+.offcanvas-backdrop {
+    background-color: var(--offcanvasBackdropColor);
+}
+
+:root:has(.nav-link:active) .offcanvas-backdrop {
+    background-color: transparent;
+}
+
+.btn-close:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* End nav */
+
+/* Start Home */
+#home {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../DevFolio\ images/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+h1 {
+    font-size: 4.5rem;
+}
+
+.animated-letters {
+    font-size: 2.5rem;
+}
+
+.animated-letters::after {
+    content: "";
+    display: inline-block;
+    -webkit-animation: move-letters 15s infinite;
+    animation: move-letters 15s infinite;
+}
+
+@keyframes move-letters {
+    0% {
+        content: "D|";
+    }
+
+    2% {
+        content: "De|";
+    }
+
+    4% {
+        content: "Dev|";
+    }
+
+    6% {
+        content: "Deve|";
+    }
+
+    8% {
+        content: "Devel|";
+    }
+
+    10% {
+        content: "Develo|";
+    }
+
+    12% {
+        content: "Develop|";
+    }
+
+    14% {
+        content: "Develope|";
+    }
+
+    16% {
+        content: "Developer|";
+    }
+
+    18% {
+        content: "Developer";
+    }
+
+    20% {
+        content: "Developer|";
+    }
+
+    22% {
+        content: "Developer";
+    }
+
+    24% {
+        content: "Developer|";
+    }
+
+    26% {
+        content: "D|";
+    }
+
+    28% {
+        content: "De|";
+    }
+
+    30% {
+        content: "Des|";
+    }
+
+    32% {
+        content: "Desi|";
+    }
+
+    34% {
+        content: "Desig|";
+    }
+
+    36% {
+        content: "Design|";
+    }
+
+    38% {
+        content: "Designe|";
+    }
+
+    40% {
+        content: "Designer|";
+    }
+
+    42% {
+        content: "Designer";
+    }
+
+    44% {
+        content: "Designer|";
+    }
+
+    46% {
+        content: "Designer";
+    }
+
+    48% {
+        content: "Designer|";
+    }
+
+    50% {
+        content: "P|";
+    }
+
+    52% {
+        content: "Ph|";
+    }
+
+    54% {
+        content: "Pho|";
+    }
+
+    56% {
+        content: "Phot|";
+    }
+
+    58% {
+        content: "Photo|";
+    }
+
+    60% {
+        content: "Photog|";
+    }
+
+    62% {
+        content: "Photogr|";
+    }
+
+    64% {
+        content: "Photogra|";
+    }
+
+    66% {
+        content: "Photograp|";
+    }
+
+    68% {
+        content: "Photograph|";
+    }
+
+    70% {
+        content: "Photographe|";
+    }
+
+    72% {
+        content: "Photographer|";
+    }
+
+    74% {
+        content: "Photographer";
+    }
+
+    76% {
+        content: "Photographer|";
+    }
+
+    78% {
+        content: "Photographer";
+    }
+
+    80% {
+        content: "Photographer|";
+    }
+
+    82% {
+        content: "F|";
+    }
+
+    84% {
+        content: "Fr|";
+    }
+
+    86% {
+        content: "Fre|";
+    }
+
+    88% {
+        content: "Free|";
+    }
+
+    90% {
+        content: "Freel|";
+    }
+
+    91% {
+        content: "Freela|";
+    }
+
+    92% {
+        content: "Freelan|";
+    }
+
+    93% {
+        content: "Freelanc|";
+    }
+
+    94% {
+        content: "Freelance|";
+    }
+
+    96% {
+        content: "Freelancer|";
+    }
+
+    97% {
+        content: "Freelancer";
+    }
+
+    98% {
+        content: "Freelancer|";
+    }
+
+    99% {
+        content: "Freelancer";
+    }
+
+    100% {
+        content: "Freelancer|";
+    }
+}
+
+/* End Home */
+
+/* Start About */
+.about-info span {
+    font-weight: 600;
+    color: #000;
+}
+
+.progress {
+    background-color: #CDE1F8;
+    border-radius: 0;
+    height: 0.7rem;
+}
+
+.skills span {
+    color: #4e4e4e;
+}
+/* End About */
+
+
+/* Start Services */
+.service-card {
+    padding: 2.5rem 1.3rem;
+    -webkit-box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1)
+}
+
+.service-card .icon,
+.facts-card .icon {
+    font-size: 40px;
+    color: var(--fontColor);
+    width: 100px;
+    height: 100px;
+    border: 7px solid var(--primaryColor);
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    margin: 0 auto 1rem;
+}
+
+.service-card:hover .icon,
+.social-links .icon:hover {
+    color: var(--whiteColor);
+    background-color: var(--primaryColor);
+    border: 7px solid #CDE1F8;
+}
+/* End Services */
+
+/* Start Facts */
+#facts {
+    background-image: linear-gradient(rgba(13, 110, 253, 0.6), rgba(13, 110, 253, 0.6)), url(../DevFolio\ images/counters-bg.jpg);
+}
+
+#facts,
+#testimonials,
+#contact {
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    padding: 8rem 0;
+}
+
+.facts-card .icon {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+    border: 10px solid #CDE1F8;
+}
+
+/* End Facts */
+/* Start Portfolio */
+
+.portfolio-card .card {
+    border: 0;
+    -webkit-box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-card .card,
+.portfolio-card img {
+    border-radius: 0;
+}
+
+.portfolio-img {
+    overflow: hidden;
+}
+
+.portfolio-card img {
+    -webkit-transition: 0.5s -webkit-transform;
+    transition: 0.5s -webkit-transform;
+    -o-transition: 0.5s transform;
+    transition: 0.5s transform;
+    transition: 0.5s transform, 0.5s -webkit-transform;
+}
+
+.portfolio-card:hover img {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+.portfolio-card .breadcrumb {
+    font-size: 0.8rem;
+}
+
+.portfolio-card .breadcrumb .breadcrumb-item:first-child {
+    color: var(--primaryColor);
+}
+
+.portfolio-card .icon {
+    font-size: 2.5rem;
+    color: var(--primaryColor);
+}
+/* End Portfolio */
+/* Start testimonials*/
+#testimonials {
+    background-attachment: fixed;
+}
+
+#testimonials,
+#contact {
+    background-image: linear-gradient(rgba(13, 110, 253, 0.6), rgba(13, 110, 253, 0.6)), url(../DevFolio\ images/overlay-bg.jpg);
+}
+
+.testimonials-img {
+    width: 150px;
+    height: 150px;
+}
+
+#testimonials .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+/* End testimonials*/
+#blog h4 {
+    font-size: 1.3rem;
+}
+
+.blog-label {
+    top: -15px;
+    font-size: 0.7rem;
+}
+
+.blog-avatar {
+    width: 35px;
+    height: 35px;
+}
+
+.blog-author {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#blog a:hover {
+    color: var(--primaryColor);
+}
+
+/* Start Contact */
+#contact {
+    padding: 8rem 0 3rem;
+    -webkit-box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 13px 8px -10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    resize: none;
+}
+
+.contact-info li {
+    -webkit-margin-after: 10px;
+    margin-block-end: 10px;
+}
+
+.contact-info span {
+    color: var(--primaryColor);
+    display: inline-block;
+    -webkit-margin-end: 5px;
+    margin-inline-end: 5px;
+}
+
+.social-links .icon {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    border: 3px solid var(--primaryColor);
+    color: var(--fontColor);
+}
+
+/* End Contact */
+/* Start Footer */
+footer {
+    padding: 1.5rem 0;
+    background: #0062d3;
+
+}
+
+/* End Footer */
+.arrow-up-icon {
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+}
